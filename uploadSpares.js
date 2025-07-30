@@ -11,9 +11,10 @@ admin.initializeApp({
 const db = admin.firestore();
 
 // ✅ Load JSON file (converted from your CSV)
-const spares = require('./spares_cleaned.json'); // Make sure this file has [{ code: ..., title: ... }, ...]
+const spares = require('./spares_first_half.json'); // Make sure this file has [{ code: ..., title: ... }, ...]
 
 async function uploadSpares() {
+  console.log('xxxxxxxxxxxxxx',spares.length);
   const batch = db.batch();
   let count = 0;
 
